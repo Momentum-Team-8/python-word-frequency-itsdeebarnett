@@ -20,9 +20,14 @@ def print_word_freq(file):
         empty_string += line_text
         line_text = text.strip()
         line_text = text.split()
-        count = 0
-        count += len(line_text)
-        print(line_text)
+        wrdcount = []
+    for wrd in line_text:
+        wrdcount.append(line_text.count(wrd))
+        print("Pairs\n" + str(list(zip(line_text, wrdcount))))
+
+    def removeStopwords(line_text, STOP_WORDS):
+        return[wrd for wrd in line_text if wrd not in STOP_WORDS]
+        # print(line_text)
 
 # Clean up text--get rid of punctuation and make sure text is lowercase
 
